@@ -1,5 +1,5 @@
 #! /bin/bash
-#make 3 directories ligands outputs and logs
+# make 3 directories ligands outputs and logs
 for f in ligand_folder/*.pdbqt; do
     b=`basename $f .pdbqt`
     echo Processing ligand $b
