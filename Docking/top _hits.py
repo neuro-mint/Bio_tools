@@ -17,7 +17,7 @@ def filter_res():
     
     neg = []
     for i in all:
-        if i[0]<-energy:
+        if i[0]<energy:
             neg.append(i)
         else:
             pass
