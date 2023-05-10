@@ -3,7 +3,7 @@ import glob
 
 def filter_res():
     energy = -5
-    f_names = glob.glob('*.pdbqt')
+    f_names = glob.glob("path_to_dir/*.pdbqt")
     all = []
     
     for f in f_names:
