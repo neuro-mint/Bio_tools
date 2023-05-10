@@ -2,28 +2,18 @@ import sys
 import glob
 
 def filter_res():
-    energy = -5
-    f_names = glob.glob("path_to_dir/*.pdbqt")
-    all = []
-    
-    for f in f_names:
-        files = open(f)
-        lines = files.readlines()
-        files.close()
+    f_names = glob.glob("path_to_outputs_dir/*.pdbqt")
+    energy = -3
+    hits = []
 
-        lines = lines[1]
-        res = float(lines.split(':')[1].split()[0])
-        all.append([res, f])
+    for f in f_names:
+        with open(f) as file:
+            lines = file.readlines()[1]
+            res = float(lines.split(':')[1].split()[0])
+            if res <= energy: hits.append([res, f])
     
-    neg = []
-    for i in all:
-        if i[0]<energy:
-            neg.append(i)
-        else:
-            pass
-    
-    for i in range(len(neg)):
-        print(neg[i])
-    return neg
+    hits.sort()
+    for i in hitsb: print(i)
+    print(f"Number of top hits: {len(hits)}")
 
 filter_res()
