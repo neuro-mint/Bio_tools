@@ -46,10 +46,10 @@ fn RNA_genseq() {
         .expect("Failed to readd line");    
     let len: u32 = len.trim().parse().expect("Please enter a whole number");
    
-    let random_DNA_seq: String = (0..len)
+    let random_RNA_seq: String = (0..len)
         .map(|_| {
             let idx = rng.gen_range(0..NUCLEOTIDES.len());
             NUCLEOTIDES[idx] as char
         }).collect();
-    println!("{:?}", random_DNA_seq);
+    println!("{:?}", random_RNA_seq);
 }
